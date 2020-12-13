@@ -69,3 +69,6 @@ local.properties
 # .sts4-cache/
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse
+
+# 계정 정보 빼기
+root-context.xml
