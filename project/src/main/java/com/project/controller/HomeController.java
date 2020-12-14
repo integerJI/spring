@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.project.service.ProjectService;
@@ -52,6 +53,31 @@ public class HomeController {
 	    model.addAttribute("list", list);
 	    
 	    return "projectList";
+	}
+	
+	/**
+	 * 게시판 등록폼
+	 * @param projectVO
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/projectRegisterForm.do")
+	public String projectRegisterForm(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) throws Exception {
+
+	    return "projectRegisterForm";
+	}
+	
+	/**
+	 * 글을 등록합니다.
+	 * @return
+	 */
+	@RequestMapping(value = "/projectInsert.do")
+	public String projectInsert(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) {
+
+		projectService.insertProject(projectVO);
+		
+		return "redirect:/projectList.do";
 	}
 	
 }
