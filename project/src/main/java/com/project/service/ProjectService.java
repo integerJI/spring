@@ -8,4 +8,6 @@ public interface ProjectService {
 	
 	void insertProject(ProjectVO projectVO);
 
+	void updateProject(ProjectVO projectVO);
+
 }

@@ -29,6 +29,17 @@
 				SYSDATE
 			 )
 	</insert>
+	
+	<update id="updateProject">
+		UPDATE
+			TB_PROJECT
+		SET
+			PRO_TITLE = #{proTitle}, 
+			PRO_BODY = #{proBody}
+		WHERE
+			PRO_ID = #{proId} 
+	</update>
+	
 
 
 </mapper>

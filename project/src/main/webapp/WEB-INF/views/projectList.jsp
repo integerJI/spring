@@ -27,6 +27,7 @@
     <td>${item.proTitle}</td>
     <td>${item.proBody}</td>
     <td>${item.proDate}</td>
+    <td><a href="${path}/projectUpdateForm.do?proId=${item.proId}">¼öÁ¤</a></td>
   </tr>
 </c:forEach>
 </tbody>

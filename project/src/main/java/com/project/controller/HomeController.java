@@ -80,4 +80,30 @@ public class HomeController {
 		return "redirect:/projectList.do";
 	}
 	
+	/**
+	 * 게시판 수정폼
+	 * @param projectVO
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/projectUpdateForm.do")
+	public String projectUpdateForm(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) throws Exception {
+
+	    return "projectUpdateForm";
+	}
+	
+	/**
+	 * 글을 수정합니다.
+	 * @return
+	 */
+	@RequestMapping(value = "/projectUpdate.do")
+	public String projectUpdate(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) {
+
+		projectService.updateProject(projectVO);
+		
+		return "redirect:/projectList.do";
+	}
+
+	
 }
