@@ -9,5 +9,7 @@ public interface ProjectService {
 	void insertProject(ProjectVO projectVO);
 
 	void updateProject(ProjectVO projectVO);
+	
+	void deleteProject(int proId);
 
 }

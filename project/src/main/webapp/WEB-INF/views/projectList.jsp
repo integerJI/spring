@@ -18,6 +18,8 @@
     <th>제목</th>
     <th>본문</th>
     <th>작성일</th>
+    <th>수정</th>
+    <th>삭제</th>
   </tr>
 </thead>
 <tbody>
@@ -28,6 +30,7 @@
     <td>${item.proBody}</td>
     <td>${item.proDate}</td>
     <td><a href="${path}/projectUpdateForm.do?proId=${item.proId}">수정</a></td>
+    <td><a href="${path}/projectDelete.do?proId=${item.proId}">삭제</a></td>
   </tr>
 </c:forEach>
 </tbody>
