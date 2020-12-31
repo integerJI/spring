@@ -7,6 +7,14 @@ public class ProjectVO {
 	private String proTitle;
 	private String proBody;
 	private Date proDate;
+	private Number viewCount;
+	
+	public Number getViewCount() {
+		return viewCount;
+	}
+	public void setViewCount(Number viewCount) {
+		this.viewCount = viewCount;
+	}
 	
 	public Integer getProId() {
 		return proId;

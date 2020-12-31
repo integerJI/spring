@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.project.service.ProjectService;
 import com.project.vo.ProjectVO;
 
@@ -79,6 +84,21 @@ public class HomeController {
 		
 		return "redirect:/projectList.do";
 	}
+
+	/**
+	 * 게시판 상세 페이지
+	 * @return
+	 */
+	@RequestMapping(value="/projectInfo.do")
+    public ModelAndView infoProject(int proId) throws Exception {
+        
+        ModelAndView mv = new ModelAndView("projectInfoForm");
+        Map<String, Object> detail = projectService.infoProject(proId);
+        mv.addObject("detail",detail);
+        
+        return mv;
+    }
+
 	
 	/**
 	 * 게시판 수정폼

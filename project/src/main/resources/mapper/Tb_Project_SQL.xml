@@ -8,9 +8,21 @@
 			PRO_ID, 
 			PRO_TITLE, 
 			PRO_BODY, 
-			PRO_DATE 
+			PRO_DATE,
+			VIEW_COUNT
 		FROM TB_PROJECT
 		ORDER BY PRO_ID DESC
+	</select>
+	
+	<select id="infoProject" resultType="projectVO">
+		SELECT
+			PRO_ID, 
+			PRO_TITLE, 
+			PRO_BODY, 
+			PRO_DATE
+		FROM TB_PROJECT
+		WHERE
+			PRO_ID = #{proId} 
 	</select>
 
 	<insert id="insertProject">
@@ -46,5 +58,14 @@
 		WHERE
 			PRO_ID = #{proId} 
 	</delete>
+	
+	<update id="viewCount">
+		UPDATE
+			TB_PROJECT
+		SET
+			VIEW_COUNT = VIEW_COUNT + 1
+		WHERE
+			PRO_ID = #{proId}
+	</update>
 
 </mapper>

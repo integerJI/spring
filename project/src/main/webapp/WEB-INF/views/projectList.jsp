@@ -10,7 +10,9 @@
 
 <body>
 <h1>Project List</h1>
-<a href="projectRegisterForm.do">글 쓰기</a>
+	<a href="projectRegisterForm.do">글 쓰기</a>
+	<br>
+	<br>
 <table border="1">
 <thead>
   <tr>
@@ -26,7 +28,7 @@
 <c:forEach var="item" items="${list}">
   <tr>
     <td>${item.proId}</td>
-    <td>${item.proTitle}</td>
+    <td><a href="${path}/projectInfo.do?proId=${item.proId}">${item.proTitle}</a></td>
     <td>${item.proBody}</td>
     <td>${item.proDate}</td>
     <td><a href="${path}/projectUpdateForm.do?proId=${item.proId}">수정</a></td>

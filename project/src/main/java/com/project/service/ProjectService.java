@@ -1,6 +1,8 @@
 package com.project.service;
 
 import java.util.List;
+import java.util.Map;
+
 import com.project.vo.ProjectVO;
 
 public interface ProjectService {
@@ -11,5 +13,8 @@ public interface ProjectService {
 	void updateProject(ProjectVO projectVO);
 	
 	void deleteProject(int proId);
+	
+	void viewCount(int proId);
 
+	Map<String, Object> infoProject(int proId);
 }

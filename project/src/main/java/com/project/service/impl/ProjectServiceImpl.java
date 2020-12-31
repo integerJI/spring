@@ -1,6 +1,8 @@
 package com.project.service.impl;
 
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,10 +30,21 @@ public class ProjectServiceImpl implements ProjectService {
 	public void updateProject(ProjectVO projectVO) {
 		projectMapper.updateProject(projectVO);
 	}
-	
+
 	@Override
 	public void deleteProject(int proId) {
 		projectMapper.deleteProject(proId);
+	}
+	
+	@Override
+	public void viewCount(int proId) {
+		projectMapper.viewCount(proId);
+	}
+	
+	@Override
+	public Map<String, Object> infoProject(int proId) {
+		
+		return projectMapper.infoProject(proId);
 	}
 
 }
