@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.activation.CommandMap;
 import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,10 +54,8 @@ public class HomeController {
 
 	    List<ProjectVO> list = projectService.selectProjectList();
 
-	    logger.info(list.toString());
-
 	    model.addAttribute("list", list);
-	    
+
 	    return "projectList";
 	}
 	
@@ -86,19 +85,18 @@ public class HomeController {
 	}
 
 	/**
-	 * 게시판 상세 페이지
+	 * 글을 상세 페이지.
 	 * @return
 	 */
-	@RequestMapping(value="/projectInfo.do")
-    public ModelAndView infoProject(int proId) throws Exception {
-        
-        ModelAndView mv = new ModelAndView("projectInfoForm");
-        Map<String, Object> detail = projectService.infoProject(proId);
-        mv.addObject("detail",detail);
-        
-        return mv;
-    }
+	@RequestMapping(value = "/projectDetailForm.do")
+	public String detailProject(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) {
 
+	    List<ProjectVO> list = projectService.detailProject(projectVO.getProId());
+
+	    model.addAttribute("list", list);
+	    
+		return "projectDetailForm";
+	}
 	
 	/**
 	 * 게시판 수정폼

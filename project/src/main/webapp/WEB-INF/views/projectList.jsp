@@ -28,7 +28,7 @@
 <c:forEach var="item" items="${list}">
   <tr>
     <td>${item.proId}</td>
-    <td><a href="${path}/projectInfo.do?proId=${item.proId}">${item.proTitle}</a></td>
+    <td><a href="${path}/projectDetailForm.do?proId=${item.proId}">${item.proTitle}</a></td>
     <td>${item.proBody}</td>
     <td>${item.proDate}</td>
     <td><a href="${path}/projectUpdateForm.do?proId=${item.proId}">¼öÁ¤</a></td>

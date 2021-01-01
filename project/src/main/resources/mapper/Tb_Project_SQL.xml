@@ -14,7 +14,7 @@
 		ORDER BY PRO_ID DESC
 	</select>
 	
-	<select id="infoProject" resultType="projectVO">
+	<select id="detailProject" resultType="projectVO">
 		SELECT
 			PRO_ID, 
 			PRO_TITLE, 

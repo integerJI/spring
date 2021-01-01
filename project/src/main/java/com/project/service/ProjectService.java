@@ -14,7 +14,8 @@ public interface ProjectService {
 	
 	void deleteProject(int proId);
 	
+	List<ProjectVO> detailProject(int proId);
+	
 	void viewCount(int proId);
 
-	Map<String, Object> infoProject(int proId);
 }
