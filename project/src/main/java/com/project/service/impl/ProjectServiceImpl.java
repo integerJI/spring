@@ -38,7 +38,6 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	public List<ProjectVO> detailProject(int proId) {
-		
 		return projectMapper.detailProject(proId);
 	}
 

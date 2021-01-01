@@ -13,7 +13,7 @@
 <c:forEach var="item" items="${list}">
   <tr>
     <td>${item.proId}</td>
-    <td>${proId.proTitle}</td>
+    <td>${item.proTitle}</td>
     <td>${item.proBody}</td>
     <td>${item.proDate}</td>
     <td><a href="${path}/projectUpdateForm.do?proId=${item.proId}">수정</a></td>
