@@ -91,6 +91,9 @@ public class HomeController {
 	@RequestMapping(value = "/projectDetailForm.do")
 	public String detailProject(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) {
 	
+		// 조회수 증가
+		projectService.viewCount(projectVO.getProId());
+		
 	    List<ProjectVO> list = projectService.detailProject(projectVO.getProId());
 	
 	    model.addAttribute("list", list);
