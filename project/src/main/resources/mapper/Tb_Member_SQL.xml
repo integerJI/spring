@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.service.dao.MemberDAO">
+
+	<insert id="insertMember">
+		<selectKey resultType="int" keyProperty="proId" order="BEFORE">
+			SELECT NVL(MAX(USER_NUM),0)+1 FROM TB_MEMBER
+		</selectKey>
+			INSERT INTO TB_MEMBER (
+				USER_NUM, 
+				USER_ID, 
+				USER_PASSWARD, 
+				REG_DATE
+			) VALUE (
+				#{userNum},
+				#{userId}, 
+				#{userPassward}, 
+				SYSDATE
+			)
+	</insert>
+	
+</mapper>
