@@ -6,7 +6,7 @@ public class MemberVO {
 	private Integer userNum;
 	private String userId;
 	private String userPassward;
-	private Date REG_DATE;
+	private Date regDate;
 	
 	public Integer getUserNum() {
 		return userNum;
@@ -25,12 +25,12 @@ public class MemberVO {
 	}
 	public void setUserPassward(String userPassward) {
 		this.userPassward = userPassward;
+	}	
+	public Date getRegDate() {
+		return regDate;
 	}
-	public Date getREG_DATE() {
-		return REG_DATE;
-	}
-	public void setREG_DATE(Date rEG_DATE) {
-		REG_DATE = rEG_DATE;
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
 	
 }
