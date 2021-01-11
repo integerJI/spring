@@ -13,7 +13,7 @@
 <P>  The time on the server is ${serverTime}. </P>
 
 <a href="projectList.do">글 목록 이동</a>
-<a href="singup.do">글 목록 이동</a>
+<a href="singup.do">회원가입 이동</a>
 
 </body>
 </html>
