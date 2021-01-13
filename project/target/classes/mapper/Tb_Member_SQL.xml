@@ -4,18 +4,18 @@
 <mapper namespace="com.project.service.dao.MemberDAO">
 
 	<insert id="insertMember">
-		<selectKey resultType="int" keyProperty="proId" order="BEFORE">
-			SELECT NVL(MAX(USER_NUM),0)+1 FROM TB_MEMBER
+		<selectKey resultType="int" keyProperty="userNum" order="BEFORE">
+			SELECT NVL(MAX(USER_NUM),0) + 1 FROM TB_MEMBER
 		</selectKey>
 			INSERT INTO TB_MEMBER (
 				USER_NUM, 
 				USER_ID, 
-				USER_PASSWARD, 
+				USER_PASSWORD, 
 				REG_DATE
-			) VALUE (
+			) VALUES (
 				#{userNum},
 				#{userId}, 
-				#{userPassward}, 
+				#{userPassword}, 
 				SYSDATE
 			)
 	</insert>

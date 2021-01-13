@@ -5,7 +5,8 @@ import java.util.Date;
 public class MemberVO {
 	private Integer userNum;
 	private String userId;
-	private String userPassward;
+	private String userPassword;
+
 	private Date regDate;
 	
 	public Integer getUserNum() {
@@ -20,12 +21,12 @@ public class MemberVO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getUserPassward() {
-		return userPassward;
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setUserPassward(String userPassward) {
-		this.userPassward = userPassward;
-	}	
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
 	public Date getRegDate() {
 		return regDate;
 	}

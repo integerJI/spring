@@ -1,23 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> <!-- @@@ 매우 중요 @@@ -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!-- src/main/webapp/WEB-INF/view/projectRegisterForm.jsp -->
+<!DOCTYPE html>
 <html>
-</html>
 <head>
-	<h1>singup start</h1>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/>
+<title>Home</title>
 </head>
 <body>
-<form action="/member/singup" method="post">
-		<label class="control-label" for="userId">아이디</label>
-		<input class="form-control" type="text" id="userId" name="userId" />
-		<br>
-		<label class="control-label" for="userPass">패스워드</label>
-		<input class="form-control" type="password" id="userPass" name="userPass" />
-		<br>
-		<label class="control-label" for="userName">성명</label>
-		<input class="form-control" type="text" id="userName" name="userName" />
-		<br>
-		<button class="btn btn-success" type="submit" id="submit">회원가입</button>
-</form>
-
-</body>	
+	<h1>Project Register</h1>
+	<c:url var="insertUrl" value="/singup" />
+	<form:form commandName="memberVO" action="${insertUrl}" name="memberVO" method="post">
+	<table>
+	<tbody>
+	<tr>
+	   <th>제목</th>
+	   <td><form:input path="userId" id="userId" size="20" maxlength="20" /></td>
+	</tr>
+	<tr>
+	   <th>내용</th>
+	   <td><form:textarea path="userPassword" id="userPassword" /></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="등록" /></td>
+	</tr>
+	</tbody>
+	</table>
+	</form:form>
+</body>
+</html>
