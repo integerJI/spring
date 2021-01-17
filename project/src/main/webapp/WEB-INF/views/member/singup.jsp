@@ -6,24 +6,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr"/>
-<title>Home</title>
+<title>Sing Up !!!</title>
 </head>
 <body>
-	<h1>Project Register</h1>
+	<h1>Sing Up !!!</h1>
 	<c:url var="insertUrl" value="/singup" />
 	<form:form commandName="memberVO" action="${insertUrl}" name="memberVO" method="post">
 	<table>
 	<tbody>
 	<tr>
-	   <th>제목</th>
+	   <th>Id</th>
 	   <td><form:input path="userId" id="userId" size="20" maxlength="20" /></td>
 	</tr>
 	<tr>
-	   <th>내용</th>
-	   <td><form:textarea path="userPassword" id="userPassword" /></td>
+	   <th>Password</th>
+	   <td><form:password path="userPassword" id="userPassword" /></td>
 	</tr>
 	<tr>
-		<td colspan="2"><input type="submit" value="등록" /></td>
+		<td colspan="2"><input type="submit" value="회원가입" /></td>
 	</tr>
 	</tbody>
 	</table>

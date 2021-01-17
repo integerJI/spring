@@ -21,7 +21,7 @@ public class MemberController {
 	@Inject
 	MemberService service;
 
-	// 회원가입 post
+	// 회원가입 get
 	@RequestMapping(value = "/singup", method = RequestMethod.GET)
 	public String getSingup(@ModelAttribute("memberVO") MemberVO memberVO, Model model) {
 		
@@ -39,6 +39,15 @@ public class MemberController {
 		service.insertMember(memberVO);
 		
 		return "home";
+	}
+	
+	// 로그인 get
+	@RequestMapping(value = "/singin", method = RequestMethod.GET)
+	public String getSingin(@ModelAttribute("memberVO") MemberVO memberVO, Model model) {
+		
+		logger.info(" ==============>>> Get SingUp Start !!!");
+		
+		return "member/singin";
 	}
 
 }
